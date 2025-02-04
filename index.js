@@ -17,4 +17,15 @@ server.get("/hello", (req, res) => {
     });
 });
 
+//http://localhost:3000/hello/Gustavo
+//Route params = /hello/:nome
+
+server.get("/hello/:nome", (req, res) =>{
+    const name= req.params.name;
+
+    return res.json({ 
+        title: "Hello World",
+        message: `My name is ${name}`
+    });
+})
 server.listen(3000);
