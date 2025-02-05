@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.21.2",
-    "NodeJS-Basics": "file:"
+    "NodeJS-Basics": "file:",
+    "nodemon": "^3.1.9"
   }
 }
