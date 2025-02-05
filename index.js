@@ -25,7 +25,7 @@ server.get("/hello/:nome", (req, res) =>{
 
     return res.json({ 
         title: "Hello World",
-        message: `My name is ${name}`
+        message: `My name is ${name}, good right ?`
     });
 })
 server.listen(3000);
