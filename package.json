@@ -6,6 +6,7 @@
   "author": "Gustavo Rocha <gurocha05@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@ljharb/tsconfig": "^0.2.3",
     "express": "^4.21.2",
     "NodeJS-Basics": "file:",
     "nodemon": "^3.1.9"
