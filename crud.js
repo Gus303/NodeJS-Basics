@@ -31,4 +31,18 @@ server.post("/crudes", (req, res) => {
     return res.status(201).json(newCrudes);
 });
 
+server.put("/crudes", (req, res) => {
+    const id = parseInt(req.params.id);
+    const { name, site} = req.body;
+
+    const index = crudes.findIndex(item.id === id);
+    const status = index >= 0 ? 200 : 400;
+
+    if(index >= 0){
+        crudes[index] = {id: parseInt(id), name, site}
+    }
+
+    return res.status(status),json(crudes[index]);
+});
+
 server.listen(3000);
