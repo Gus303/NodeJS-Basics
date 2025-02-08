@@ -11,7 +11,7 @@ let crudes = [
 
 server.get("/crudes", (req, res) => {
     return res.json(crudes);
-})
+});
 
 server.get("/crudes/:id", (req, res) => {
     const id = parseInt(req.params.id);
@@ -19,6 +19,16 @@ server.get("/crudes/:id", (req, res) => {
     const status = crudes ? 200 : 404;
 
     return res.status(status).json(crud);
-})
+});
+
+server.post("/crudes", (req, res) => {
+    const { name, site } = req.body;
+    const nestId = crudes[crudes.length - 1].id + 1;
+
+    const newCrudes = {id, name, site};
+    crudes.push(newCrudes);
+
+    return res.status(201).json(newCrudes);
+});
 
 server.listen(3000);
