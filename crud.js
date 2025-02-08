@@ -31,7 +31,7 @@ server.post("/crudes", (req, res) => {
     return res.status(201).json(newCrudes);
 });
 
-server.put("/crudes", (req, res) => {
+server.put("/crudes/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const { name, site} = req.body;
 
@@ -44,5 +44,18 @@ server.put("/crudes", (req, res) => {
 
     return res.status(status),json(crudes[index]);
 });
+
+server.delete("/crudes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = crudes.findIndex(item.id === id);
+    const status = index >= 0 ? 200 : 400;
+
+    if(index >= 0){
+    crudes.splice(index, 1);
+    }
+
+    return res.status(status).json();
+});
+
 
 server.listen(3000);
