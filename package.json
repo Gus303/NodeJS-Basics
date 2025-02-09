@@ -7,8 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "@ljharb/tsconfig": "^0.2.3",
-    "NodeJS-Basics": "file:",
     "express": "^4.21.2",
+    "NodeJS-Basics": "file:",
     "nodemon": "^3.1.9"
   },
   "scripts": {
