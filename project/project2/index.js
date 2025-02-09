@@ -36,7 +36,7 @@ server.post("/crudes", (req, res) => {
 
 server.put("/crudes/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    const { name, site} = req.body;
+    const { name, site } = req.body;
 
     const index = crudes.findIndex(item.id === id);
     const status = index >= 0 ? 200 : 400;

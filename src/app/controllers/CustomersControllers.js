@@ -29,20 +29,20 @@ class CustomersControllers {
     }
     update(req, res){
         const id = parseInt(req.params.id);
-        const { name, site} = req.body;
+        const { name, site } = req.body;
     
-        const index = customers.findIndex(item.id === id);
+        const index = customers.findIndex(item => item.id === id);
         const status = index >= 0 ? 200 : 400;
     
         if(index >= 0){
-            customers[index] = {id: parseInt(id), name, site}
+            customers[index] = {id: parseInt(id), name, site};
         }
     
-        return res.status(status),json(customers[index]);
+        return res.status(status).json(customers[index]);
     }
     destroy(req, res){
         const id = parseInt(req.params.id);
-        const index = customers.findIndex(item.id === id);
+        const index = customers.findIndex(item => item.id === id);
         const status = index >= 0 ? 200 : 400;
 
         if(index >= 0){
