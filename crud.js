@@ -18,7 +18,7 @@ server.get("/crudes/:id", (req, res) => {
     const crud = crudes.find(item => item.id === id);
     const status = crudes ? 200 : 404;
 
-    console.log("GET :: /crudes/:id", crudes);
+    console.debug("GET :: /crudes/:id", crudes);
     
 
     return res.status(status).json(crud);
