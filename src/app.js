@@ -4,6 +4,8 @@ const routes = require("./routes");
 class App {
     constructor() {
         this.server = express();
+        this.middleware();
+        this.routes();
     }
 
     middleware() {
@@ -14,3 +16,5 @@ class App {
         this.server.use(routes);
     }
 }
+
+module.exports = new App().server;
