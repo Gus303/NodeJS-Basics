@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-Basics",
-  "version": "1.0.0",
+  "version": "1.22.22",
   "main": "index.js",
   "repository": "https://github.com/Gus303/NodeJS-Basics.git",
   "author": "Gustavo Rocha <gurocha05@gmail.com>",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "eslint": "^9.20.0",
+    "eslint-config-google": "^0.14.0",
     "sucrase": "^3.35.0"
   }
 }
