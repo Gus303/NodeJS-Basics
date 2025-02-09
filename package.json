@@ -7,14 +7,16 @@
   "license": "MIT",
   "dependencies": {
     "@ljharb/tsconfig": "^0.2.3",
-    "express": "^4.21.2",
     "NodeJS-Basics": "file:",
+    "express": "^4.21.2",
     "nodemon": "^3.1.9"
   },
   "scripts": {
     "dev": "nodemon ./src/server.js"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.0",
     "sucrase": "^3.35.0"
   }
 }
