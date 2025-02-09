@@ -1,31 +1,64 @@
 const express = require("express");
 const server = express();
 
-//http://localhost:3000/hello?name=Gustavo&age=19
-// Query params = ?name=Gustavo&age=19
+server.use(express.json());
 
-//http://localhost:3000/hello/Gustavo
-//Route params = /hello/:name
+let crudes = [
+    { id: 1, name: "Google", site: "http://google.com"},
+    { id: 2, name: "LinkedIn", site: "http://linkedin.com"},
+    { id: 3, name: "Github", site: "http://github.com"}
+];
 
-server.get("/hello", (req, res) => {
-    const { name, age } = req.query;
-
-    return res.json({ 
-        title: "Hello World",
-        message: `My name is ${name}`,
-        age: age
-    });
+server.get("/crudes", (req, res) => {
+    return res.json(crudes);
 });
 
-//http://localhost:3000/hello/Gustavo
-//Route params = /hello/:nome
+server.get("/crudes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const crud = crudes.find(item => item.id === id);
+    const status = crudes ? 200 : 404;
 
-server.get("/hello/:nome", (req, res) =>{
-    const name= req.params.name;
+    console.debug("GET :: /crudes/:id", crudes);
+    
 
-    return res.json({ 
-        title: "Hello World",
-        message: `My name is ${name}, good right ?`
-    });
-})
+    return res.status(status).json(crud);
+});
+
+server.post("/crudes", (req, res) => {
+    const { name, site } = req.body;
+    const nestId = crudes[crudes.length - 1].id + 1;
+
+    const newCrudes = {id, name, site};
+    crudes.push(newCrudes);
+
+    return res.status(201).json(newCrudes);
+});
+
+server.put("/crudes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const { name, site} = req.body;
+
+    const index = crudes.findIndex(item.id === id);
+    const status = index >= 0 ? 200 : 400;
+
+    if(index >= 0){
+        crudes[index] = {id: parseInt(id), name, site}
+    }
+
+    return res.status(status),json(crudes[index]);
+});
+
+server.delete("/crudes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = crudes.findIndex(item.id === id);
+    const status = index >= 0 ? 200 : 400;
+
+    if(index >= 0){
+    crudes.splice(index, 1);
+    }
+
+    return res.status(status).json();
+});
+
+
 server.listen(3000);
