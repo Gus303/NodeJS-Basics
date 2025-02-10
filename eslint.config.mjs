@@ -8,6 +8,7 @@ export default [
   pluginJs.configs.recommended,
   {
     rules: {
+      "prettier/prettier": "error", 
       "no-unused-vars": ["error", {
             "vars": "all",
             "args": "after-used",
