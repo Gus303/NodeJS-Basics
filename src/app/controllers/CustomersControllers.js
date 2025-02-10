@@ -1,7 +1,7 @@
 let customers =[
-    { id: 1, name: "Google", site: "http://google.com"},
-    { id: 2, name: "LinkedIn", site: "http://linkedin.com"},
-    { id: 3, name: "Github", site: "http://github.com"}
+    { id: 1, name: 'Google', site: 'http://google.com'},
+    { id: 2, name: 'LinkedIn', site: 'http://linkedin.com'},
+    { id: 3, name: 'Github', site: 'http://github.com'}
 ];
 class CustomersControllers {
 
@@ -13,7 +13,7 @@ class CustomersControllers {
         const customer = customers.find(item => item.id === id);
         const status = customer ? 200 : 404;
     
-        console.debug("GET :: /customers/:id", customer);
+        console.debug('GET :: /customers/:id', customer);
         
     
         return res.status(status).json(customer);
