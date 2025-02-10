@@ -7,9 +7,10 @@
   "license": "MIT",
   "dependencies": {
     "@ljharb/tsconfig": "^0.2.3",
-    "express": "^4.21.2",
     "NodeJS-Basics": "file:",
-    "nodemon": "^3.1.9"
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
@@ -19,6 +20,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^15.14.0",
     "prettier": "^3.5.0",
+    "sequelize-cli": "^6.6.2",
     "sucrase": "^3.35.0"
   },
   "scripts": {
