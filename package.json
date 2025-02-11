@@ -7,8 +7,9 @@
   "license": "MIT",
   "dependencies": {
     "@ljharb/tsconfig": "^0.2.3",
-    "express": "^4.21.2",
     "NodeJS-Basics": "file:",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "nodemon": "^3.1.9",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
