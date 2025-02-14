@@ -1,6 +1,6 @@
 # Node.js Basic Project
 
-This is a simple Node.js project to demonstrate basic functionality.
+This is a simple Node.js project to demonstrate basic functionalities.
 
 ## Inspiration
 
