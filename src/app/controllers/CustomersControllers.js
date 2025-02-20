@@ -1,3 +1,5 @@
+import Customer from "../models/Customer";
+
 let customers =[
     { id: 1, name: "Google", site: "http://google.com"},
     { id: 2, name: "LinkedIn", site: "http://linkedin.com"},
@@ -5,8 +7,12 @@ let customers =[
 ];
 class CustomersControllers {
 
-    index(req, res) {
-        return res.json(customers);
+    async index(req, res) {
+        const data = await Customer.findAll({
+          limit: 1000,
+        });
+
+        return res.json(data);
     }
     show(req, res){
         const id = parseInt(req.params.id);
