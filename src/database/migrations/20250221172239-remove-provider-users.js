@@ -1,9 +1,13 @@
 module.exports = {
- up: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('users');
+ up: queryInterface => {
+    return queryInterface.removeColumn('users', 'provider');
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {id: Sequelize.INTEGER});
+    return queryInterface.addColumn('users', 'provider',{
+      type: Sequelize.BOOLEAN,
+      default: false,
+      allowNull: false,
+    });
   }
 };
