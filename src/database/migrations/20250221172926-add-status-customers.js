@@ -8,9 +8,12 @@ module.exports = {
    },
 
    down: queryInterface  => {
-    return queryInterface.sequelize.transaction();
-
-    //return queryInterface.removeColumn('customers', 'status');
+    return queryInterface.sequelize.transaction(async transaction => {
+      await queryInterface.removeColumn('customers', 'status', {transaction});
+      await queryInterface.sequelize.query('DROP TYPE enum_customers_status', {
+        transaction
+      });
+    });
      },
  };
 
